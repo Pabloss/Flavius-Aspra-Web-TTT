@@ -11,7 +11,8 @@
           "TicTacToeTest\\": "test/"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.4"
+        "phpunit/phpunit": "^6.4",
+        "zendframework/zend-expressive-tooling": "^0.4.5"
     },
     "authors": [
         {
@@ -23,6 +24,8 @@
         "zendframework/zend-expressive": "^2.1",
         "zendframework/zend-expressive-fastroute": "^2.1",
         "zendframework/zend-servicemanager": "^3.3",
-        "http-interop/http-middleware": "^0.5.0"
+        "zendframework/zend-component-installer": "^1.1",
+        "zendframework/zend-config-aggregator": "^1.0",
+        "http-interop/http-middleware": "0.*"
     }
 }
