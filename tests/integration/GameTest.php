@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace TicTacToeTest\integration;
 
-use PHPUnit\Framework\TestCase;
 use Domain\TicTacToe\Game as TicTacToe;
 use Domain\TicTacToe\Player;
 use Domain\TicTacToe\Symbol;
+use PHPUnit\Framework\TestCase;
 
 class GameTest extends TestCase
 {
@@ -77,7 +77,7 @@ class GameTest extends TestCase
 
         self::assertEquals(
             TicTacToe::GAME_STARTED_BY_PLAYER0_ERROR,
-            $game->errors() &  TicTacToe::GAME_STARTED_BY_PLAYER0_ERROR
+            $game->errors() & TicTacToe::GAME_STARTED_BY_PLAYER0_ERROR
         );
     }
 }

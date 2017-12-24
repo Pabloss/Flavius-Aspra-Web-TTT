@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace Application\App;
 
 use Application\App\Controller\HomeController;
 
 /**
- * The configuration provider for the App module
+ * The configuration provider for the Application\App module
  *
  * @see https://docs.zendframework.com/zend-component-installer/
  */
@@ -36,7 +36,7 @@ class ConfigProvider
     {
         return [
             'invokables' => [
-                'App/Controller/Home' => HomeController::class,
+                'Application\App/Controller/Home' => HomeController::class,
                 \PingService::class => \PingService::class,
             ],
             'factories' => [

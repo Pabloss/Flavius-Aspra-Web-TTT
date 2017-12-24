@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace TicTacToeTest\src\TicTacToe;
 
-use PHPUnit\Framework\TestCase;
 use Domain\TicTacToe\Game as TicTacToe;
 use Domain\TicTacToe\Symbol;
+use PHPUnit\Framework\TestCase;
 
 class GameTest extends TestCase
 {

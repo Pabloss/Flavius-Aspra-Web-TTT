@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace TicTacToeTest\src\TicTacToe;
 
-use PHPUnit\Framework\TestCase;
 use Domain\TicTacToe\Game\History;
+use PHPUnit\Framework\TestCase;
 
 class HistoryTest extends TestCase
 {
