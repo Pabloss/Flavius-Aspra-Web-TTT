@@ -4,9 +4,9 @@ declare(strict_types=1);
 namespace TicTacToeTest\integration;
 
 use PHPUnit\Framework\TestCase;
-use TicTacToe\Game as TicTacToe;
-use TicTacToe\Player;
-use TicTacToe\Symbol;
+use Domain\TicTacToe\Game as TicTacToe;
+use Domain\TicTacToe\Player;
+use Domain\TicTacToe\Symbol;
 
 class GameTest extends TestCase
 {
@@ -57,8 +57,8 @@ class GameTest extends TestCase
         $history = new TicTacToe\History();
         $game = new TicTacToe($history);
         list($playerX, $player0) = $game->players(new Symbol('X'), new Symbol('0'));
-        $playerX->takeTile(new \TicTacToe\Tile(0, 0));
-        $playerX->takeTile(new \TicTacToe\Tile(1, 1));
+        $playerX->takeTile(new \Domain\TicTacToe\Tile(0, 0));
+        $playerX->takeTile(new \Domain\TicTacToe\Tile(1, 1));
         self::assertEquals(
             TicTacToe::DUPLICATED_TURNS_ERROR,
             $game->errors() & TicTacToe::DUPLICATED_TURNS_ERROR
@@ -73,7 +73,7 @@ class GameTest extends TestCase
         $history = new TicTacToe\History();
         $game = new TicTacToe($history);
         list($playerX, $player0) = $game->players(new Symbol('X'), new Symbol('0'));
-        $player0->takeTile(new \TicTacToe\Tile(0, 0));
+        $player0->takeTile(new \Domain\TicTacToe\Tile(0, 0));
 
         self::assertEquals(
             TicTacToe::GAME_STARTED_BY_PLAYER0_ERROR,

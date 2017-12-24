@@ -5,9 +5,9 @@ namespace TicTacToeTest\acceptance;
 
 use PHPUnit\Framework\TestCase;
 
-use TicTacToe\Game as TicTacToe;
-use TicTacToe\Symbol;
-use TicTacToe\Tile;
+use Domain\TicTacToe\Game as TicTacToe;
+use Domain\TicTacToe\Symbol;
+use Domain\TicTacToe\Tile;
 
 class BasicGameplayTest extends TestCase
 {

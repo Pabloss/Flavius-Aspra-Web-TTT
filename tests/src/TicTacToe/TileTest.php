@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace TicTacToeTest\src\TicTacToe;
 
 use PHPUnit\Framework\TestCase;
-use TicTacToe\Tile;
+use Domain\TicTacToe\Tile;
 
 class TileTest extends TestCase
 {
@@ -20,7 +20,7 @@ class TileTest extends TestCase
 
     /**
      * @test
-     * @expectedException TicTacToe\Exception\OutOfLegalSizeException
+     * @expectedException Domain\TicTacToe\Exception\OutOfLegalSizeException
      */
     public function throws_exceptions_on_illegal_position__column()
     {
@@ -29,7 +29,7 @@ class TileTest extends TestCase
 
     /**
      * @test
-     * @expectedException TicTacToe\Exception\OutOfLegalSizeException
+     * @expectedException Domain\TicTacToe\Exception\OutOfLegalSizeException
      */
     public function throws_exceptions_on_illegal_position__row()
     {
@@ -38,7 +38,7 @@ class TileTest extends TestCase
 
     /**
      * @test
-     * @expectedException TicTacToe\Exception\OutOfLegalSizeException
+     * @expectedException Domain\TicTacToe\Exception\OutOfLegalSizeException
      */
     public function throws_exceptions_on_illegal_position__both()
     {

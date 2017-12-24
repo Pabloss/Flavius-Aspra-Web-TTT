@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToe;
+namespace Domain\TicTacToe;
 
-use TicTacToe\Exception\OutOfLegalSizeException;
+use Domain\TicTacToe\Exception\OutOfLegalSizeException;
 
 class Tile
 {

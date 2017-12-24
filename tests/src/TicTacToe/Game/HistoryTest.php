@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace TicTacToeTest\src\TicTacToe;
 
 use PHPUnit\Framework\TestCase;
-use TicTacToe\Game\History;
+use Domain\TicTacToe\Game\History;
 
 class HistoryTest extends TestCase
 {

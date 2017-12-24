@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Application\App\Controller\HomeController;
+
 /**
  * The configuration provider for the App module
  *
@@ -21,7 +23,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
-            'templates'    => $this->getTemplates(),
+            'templates' => $this->getTemplates(),
         ];
     }
 
@@ -34,8 +36,10 @@ class ConfigProvider
     {
         return [
             'invokables' => [
+                'App/Controller/Home' => HomeController::class,
+                \PingService::class => \PingService::class,
             ],
-            'factories'  => [
+            'factories' => [
             ],
         ];
     }
@@ -49,8 +53,8 @@ class ConfigProvider
     {
         return [
             'paths' => [
-                'app'    => [__DIR__ . '/../templates/app'],
-                'error'  => [__DIR__ . '/../templates/error'],
+                'app' => [__DIR__ . '/../templates/app'],
+                'error' => [__DIR__ . '/../templates/error'],
                 'layout' => [__DIR__ . '/../templates/layout'],
             ],
         ];

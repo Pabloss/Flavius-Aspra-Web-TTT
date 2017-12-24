@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToe;
+namespace Domain\TicTacToe;
 
 class Player
 {
     private $symbol;
     private $game;
 
-    public function __construct(Symbol $symbol, Game  $game)
+    public function __construct(Symbol $symbol, Game $game)
     {
         $this->symbol = $symbol;
         $this->game = $game;

@@ -9,19 +9,19 @@ class SymbolTest extends TestCase
 {
     /**
      * @test
-     * @expectedException TicTacToe\Exception\NotAllowedSymbolValue
+     * @expectedException Domain\TicTacToe\Exception\NotAllowedSymbolValue
      */
     public function validate_symbol()
     {
         /**
          * Put here all posible cases of wrong initialization arguments
          */
-        $symbol = new \TicTacToe\Symbol('#');
-        $symbol = new \TicTacToe\Symbol(0);
-        $symbol = new \TicTacToe\Symbol(-1);
-        $symbol = new \TicTacToe\Symbol(null);
-        $symbol = new \TicTacToe\Symbol(new \stdClass());
-        $symbol = new \TicTacToe\Symbol(\json_decode(['x' => 'y']));
+        $symbol = new \Domain\TicTacToe\Symbol('#');
+        $symbol = new \Domain\TicTacToe\Symbol(0);
+        $symbol = new \Domain\TicTacToe\Symbol(-1);
+        $symbol = new \Domain\TicTacToe\Symbol(null);
+        $symbol = new \Domain\TicTacToe\Symbol(new \stdClass());
+        $symbol = new \Domain\TicTacToe\Symbol(\json_decode(['x' => 'y']));
     }
 
     /**
@@ -29,10 +29,10 @@ class SymbolTest extends TestCase
      */
     public function get_symbol()
     {
-        $symbol = new \TicTacToe\Symbol('X');
+        $symbol = new \Domain\TicTacToe\Symbol('X');
         self::assertEquals('X', $symbol->value());
 
-        $symbol = new \TicTacToe\Symbol('0');
+        $symbol = new \Domain\TicTacToe\Symbol('0');
         self::assertEquals('0', $symbol->value());
     }
 }

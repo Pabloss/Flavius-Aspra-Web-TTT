@@ -1,52 +1,100 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToe;
+namespace Domain\TicTacToe;
 
 class Game
 {
     const patterns = [
-            [
-            '#', '#', '#',
-            ' ', ' ', ' ',
-            ' ', ' ', ' ',
-            ],
-            [
-            ' ', ' ', ' ',
-            '#', '#', '#',
-            ' ', ' ', ' ',
-            ],
-            [
-            ' ', ' ', ' ',
-            ' ', ' ', ' ',
-            '#', '#', '#',
-            ],
-            [
-            '#', ' ', ' ',
-            '#', ' ', ' ',
-            '#', ' ', ' ',
-            ],
-            [
-            ' ', '#', ' ',
-            ' ', '#', ' ',
-            ' ', '#', ' ',
-            ],
-            [
-            ' ', ' ', '#',
-            ' ', ' ', '#',
-            ' ', ' ', '#',
-            ],
-            [
-            '#', ' ', ' ',
-            ' ', '#', ' ',
-            ' ', ' ', '#',
-            ],
-            [
-            ' ', ' ', '#',
-            ' ', '#', ' ',
-            '#', ' ', ' ',
-            ]
-        ];
+        [
+            '#',
+            '#',
+            '#',
+            ' ',
+            ' ',
+            ' ',
+            ' ',
+            ' ',
+            ' ',
+        ],
+        [
+            ' ',
+            ' ',
+            ' ',
+            '#',
+            '#',
+            '#',
+            ' ',
+            ' ',
+            ' ',
+        ],
+        [
+            ' ',
+            ' ',
+            ' ',
+            ' ',
+            ' ',
+            ' ',
+            '#',
+            '#',
+            '#',
+        ],
+        [
+            '#',
+            ' ',
+            ' ',
+            '#',
+            ' ',
+            ' ',
+            '#',
+            ' ',
+            ' ',
+        ],
+        [
+            ' ',
+            '#',
+            ' ',
+            ' ',
+            '#',
+            ' ',
+            ' ',
+            '#',
+            ' ',
+        ],
+        [
+            ' ',
+            ' ',
+            '#',
+            ' ',
+            ' ',
+            '#',
+            ' ',
+            ' ',
+            '#',
+        ],
+        [
+            '#',
+            ' ',
+            ' ',
+            ' ',
+            '#',
+            ' ',
+            ' ',
+            ' ',
+            '#',
+        ],
+        [
+            ' ',
+            ' ',
+            '#',
+            ' ',
+            '#',
+            ' ',
+            '#',
+            ' ',
+            ' ',
+        ]
+    ];
 
     const OK = 0;
     const DUPLICATED_PLAYERS_ERROR = 1;
@@ -63,7 +111,7 @@ class Game
 
     private $errors;
 
-    public function __construct(\TictacToe\Game\History $history)
+    public function __construct(\Domain\TicTacToe\Game\History $history)
     {
         $this->board = \array_fill(0, 9, null);
         $this->history = $history;
@@ -128,7 +176,7 @@ class Game
 
             $this->saveTurnToHistory($tile);
         }
-        
+
         return $tile;
     }
 
@@ -179,10 +227,10 @@ class Game
             self::patterns,
             function ($carry, $pattern) use ($symbol) {
                 $carry =
-                (
-                    $carry ||
-                    $this->countFieldsMatchedToPattern($pattern, $symbol) === 3
-                );
+                    (
+                        $carry ||
+                        $this->countFieldsMatchedToPattern($pattern, $symbol) === 3
+                    );
                 return $carry;
             },
             false

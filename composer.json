@@ -4,7 +4,8 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-          "TicTacToe\\": "src/"
+          "Domain\\TicTacToe\\": "Domain/src/",
+          "Application\\App\\": "src/App/src/App/"
         }
     },
     "autoload-dev": {

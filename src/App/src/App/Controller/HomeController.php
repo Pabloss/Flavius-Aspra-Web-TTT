@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToe\App\src\App\Controller;
+namespace Application\App\Controller;
 
 use Zend\Http\Response;
 use Zend\Mvc\Controller\AbstractController;
