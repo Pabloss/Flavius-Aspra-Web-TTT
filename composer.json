@@ -28,6 +28,7 @@
         "zendframework/zend-component-installer": "^1.1",
         "zendframework/zend-config-aggregator": "^1.0",
         "zendframework/zend-mvc": "^3.1",
-        "http-interop/http-middleware": "0.*"
+        "http-interop/http-middleware": "0.*",
+        "dmore/chrome-mink-driver": "^2.5"
     }
 }
