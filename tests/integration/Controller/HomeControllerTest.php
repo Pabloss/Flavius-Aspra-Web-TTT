@@ -20,7 +20,7 @@ class HomeControllerTest extends TestCase
     public function setUp()
     {
         $chromeUrl = 'http://localhost:9222';
-        $this->driver = new ChromeDriver($chromeUrl, null, 'http://ttt.mentoring.local');
+        $this->driver = new ChromeDriver($chromeUrl, null, 'http://localhost:8080');
     }
 
 
@@ -42,7 +42,7 @@ class HomeControllerTest extends TestCase
     public function anyAction()
     {
         $session = $this->startSession();
-        $session->visit('http://ttt.mentoring.local');
+        $session->visit('http://localhost:8080');
         $page = $session->getPage();
         $this->assertTrue($page->hasContent('Hello'));
     }
