@@ -24,6 +24,15 @@
             "email": "pawel.zimnowodzki@gmail.com"
         }
     ],
+    "scripts":{
+	    "post-install-cmd": "chmod +x bin/serve",
+	    "serve": "@php -S 0.0.0.0:8080 -t src/Plugin/UI/Web/public index.php &",
+	    "headless-chrome": "chrome --disable-gpu --headless --remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 &",
+	    "serve-phpunit": [
+	    	"@serve",
+		"@headless-chrome"
+	    ]
+    },
     "require": {
         "zendframework/zend-expressive": "^2.1",
         "zendframework/zend-expressive-fastroute": "^2.1",
@@ -35,3 +44,4 @@
         "dmore/chrome-mink-driver": "^2.5"
     }
 }
+
