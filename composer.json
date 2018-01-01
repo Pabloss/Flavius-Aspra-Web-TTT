@@ -11,6 +11,9 @@
     "autoload-dev": {
           "TicTacToeTest\\": "test/"
     },
+    "config": {
+        "bind-dir": "bin/"
+    },
     "require-dev": {
         "phpunit/phpunit": "^6.4",
         "zendframework/zend-expressive-tooling": "^0.4.5"

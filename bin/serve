@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+php -S 0.0.0.0:8080 -t src/Plugin/UI/Web/public index.php &
+chrome --disable-gpu --headless --remote-debugging-address=0.0.0.0:8080 --remote-debugging-port=9222 &
