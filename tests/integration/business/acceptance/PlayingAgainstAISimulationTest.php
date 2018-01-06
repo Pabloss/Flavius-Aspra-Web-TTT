@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToeTest\acceptance;
+namespace TicTacToeTest\integration\business;
 
 use Domain\TicTacToe\AI\AI;
 use Domain\TicTacToe\AI\AIPlayer;
