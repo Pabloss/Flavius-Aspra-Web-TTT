@@ -37,7 +37,7 @@ class ConfigProvider
         return [
             'invokables' => [
                 'Application\App/Controller/Home' => HomeController::class,
-                \PingService::class => \PingService::class,
+                \Application\App\Service\PingService::class => \Application\App\Service\PingService::class,
             ],
             'factories' => [
             ],
