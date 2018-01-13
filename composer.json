@@ -5,7 +5,7 @@
     "autoload": {
         "psr-4": {
           "Domain\\TicTacToe\\": "Domain/src/",
-          "Application\\App\\": "src/App/src/App/"
+          "Application\\": "src/App/src/"
         }
     },
     "autoload-dev": {
@@ -24,15 +24,6 @@
             "email": "pawel.zimnowodzki@gmail.com"
         }
     ],
-    "scripts":{
-	    "post-install-cmd": "chmod +x bin/serve",
-	    "serve": "@php -S 0.0.0.0:8080 -t src/Plugin/UI/Web/public index.php &",
-	    "headless-chrome": "chrome --disable-gpu --headless --remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 &",
-	    "serve-phpunit": [
-	    	"@serve",
-		"@headless-chrome"
-	    ]
-    },
     "require": {
         "zendframework/zend-expressive": "^2.1",
         "zendframework/zend-expressive-fastroute": "^2.1",
@@ -41,7 +32,10 @@
         "zendframework/zend-config-aggregator": "^1.0",
         "zendframework/zend-mvc": "^3.1",
         "http-interop/http-middleware": "0.*",
-        "dmore/chrome-mink-driver": "^2.5"
+        "dmore/chrome-mink-driver": "^2.5",
+        "zendframework/zend-expressive-twigrenderer": "^1.5",
+        "zendframework/zend-config": "^3.1",
+        "zendframework/zend-stdlib": "^3.1",
+        "zendframework/zend-expressive-zendrouter": "^2.1"
     }
 }
-
