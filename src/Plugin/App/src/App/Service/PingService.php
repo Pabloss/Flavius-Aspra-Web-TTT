@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Application\App\Service;
+namespace Application\Service;
 
 use Zend\Diactoros\Response\JsonResponse;
 

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Domain\TicTacToe;
+namespace TicTacToe;
 
-use Domain\TicTacToe\Exception\NotAllowedSymbolValue;
+use TicTacToe\Exception\NotAllowedSymbolValue;
 
 class Symbol
 {

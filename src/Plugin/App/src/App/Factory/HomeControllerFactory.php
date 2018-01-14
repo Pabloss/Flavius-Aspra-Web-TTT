@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Application\App\Factory;
+namespace Application\Factory;
 
-use Application\App\Controller\HomeController;
+use Application\Controller\HomeController;
 use Interop\Container\ContainerInterface;
 use Zend\Expressive\Twig\TwigRenderer;
 use Zend\ServiceManager\Factory\FactoryInterface;

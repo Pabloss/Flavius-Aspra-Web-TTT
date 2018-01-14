@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-use Application\App\Factory\HomeControllerFactory;
+
+use Application\Factory\HomeControllerFactory;
 use Interop\Http\ServerMiddleware\DelegateInterface;
 use Zend\Diactoros\Response\JsonResponse;
 use Zend\Diactoros\Response\TextResponse;
-use Zend\Expressive\AppFactory;
 use Zend\Expressive\Application;
 
 ini_set('display_errors', 'On');

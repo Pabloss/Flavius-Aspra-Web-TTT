@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Application\App\Controller;
+namespace Application\Controller;
 
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
