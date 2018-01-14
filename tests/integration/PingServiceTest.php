@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace TicTacToeTest\integration;
 
-use Application\App\Service\PingService;
+use Application\Service\PingService;
 use PHPUnit\Framework\TestCase;
 
 class PingServiceTest extends TestCase

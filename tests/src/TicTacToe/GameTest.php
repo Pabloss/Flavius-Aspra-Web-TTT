@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace TicTacToeTest\src\TicTacToe;
 
-use Domain\TicTacToe\Game as TicTacToe;
-use Domain\TicTacToe\Symbol;
 use PHPUnit\Framework\TestCase;
+use TicTacToe\Game as TicTacToe;
+use TicTacToe\Symbol;
 
 class GameTest extends TestCase
 {
@@ -18,10 +18,10 @@ class GameTest extends TestCase
         $history = new TicTacToe\History();
         $game = new TicTacToe($history);
         list($playerX, $player0) = $game->players(new Symbol('X'), new Symbol('0'));
-        $playerX->takeTile(new \Domain\TicTacToe\Tile(0, 0));
-        $player0->takeTile(new \Domain\TicTacToe\Tile(0, 1));
-        $playerX->takeTile(new \Domain\TicTacToe\Tile(1, 0));
-        $player0->takeTile(new \Domain\TicTacToe\Tile(1, 1));
+        $playerX->takeTile(new \TicTacToe\Tile(0, 0));
+        $player0->takeTile(new \TicTacToe\Tile(0, 1));
+        $playerX->takeTile(new \TicTacToe\Tile(1, 0));
+        $player0->takeTile(new \TicTacToe\Tile(1, 1));
         self::assertEquals([$playerX, $player0, null, $playerX, $player0, null, null, null, null], $game->board());
         self::assertEquals([[0, 0], [0, 1], [1, 0], [1, 1]], $game->history());
     }

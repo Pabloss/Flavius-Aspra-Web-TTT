@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace TicTacToeTest\integration;
 
-use Domain\TicTacToe\AI\AI;
-use Domain\TicTacToe\Game as TicTacToe;
-use Domain\TicTacToe\Symbol;
 use PHPUnit\Framework\TestCase;
+use TicTacToe\AI\AI;
+use TicTacToe\Game as TicTacToe;
+use TicTacToe\Symbol;
 
 class PlayerTest extends TestCase
 {

@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToeTest\acceptance;
+namespace TicTacToeTest\integration;
 
-use Domain\TicTacToe\Game as TicTacToe;
-use Domain\TicTacToe\Symbol;
-use Domain\TicTacToe\Tile;
 use PHPUnit\Framework\TestCase;
+use TicTacToe\Game as TicTacToe;
+use TicTacToe\Symbol;
+use TicTacToe\Tile;
 
 class BasicGameplayTest extends TestCase
 {
