@@ -1,9 +1,8 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToeTest\integration\business\Controller;
+namespace TicTacToeTest\integration\business\acceptance\Controller;
 
-use Application\Factory\HomeControllerFactory;
 use Behat\Mink\Session;
 use DMore\ChromeDriver\ChromeDriver;
 use PHPUnit\Framework\TestCase;
@@ -28,22 +27,8 @@ class HomeControllerTest extends TestCase
             null,
             self::WEBSITE_URL
         );
-        $this->container = require dirname(__DIR__, 3) . '/config/container.php';
+        $this->container = require dirname(__DIR__, 4) . '/config/container.php';
         $this->app = $this->container->get(\Zend\Expressive\Application::class);
-    }
-
-
-    /**
-     * @test
-     */
-    public function indexAction()
-    {
-        $factory = new HomeControllerFactory();
-        $controller = $factory($this->container, "Controller");
-        self::assertEquals(
-            self::HTTP_OK_CODE,
-            $controller->indexAction()->getStatusCode()
-        );
     }
 
     /**
@@ -63,7 +48,10 @@ class HomeControllerTest extends TestCase
             [2, 1],
         ];
         foreach ($gameClickSequence as $step) {
-            $element = $this->iClickOnTheElementWithCSSSelector('div.row-' . $step[0] . ' div.column-' . $step[1] . ' div.square-responsive div.content');
+            $element = $this->iClickOnTheElementWithCSSSelector(
+                $session,
+                'div.row-' . $step[0] . ' div.column-' . $step[1] . ' div.square-responsive div.content'
+            );
             $this->assertTrue(!empty($element->getHtml()));
         }
     }
@@ -98,9 +86,8 @@ class HomeControllerTest extends TestCase
      *
      * @When /^I click on the element with css selector "([^"]*)"$/
      */
-    public function iClickOnTheElementWithCSSSelector($cssSelector)
+    public function iClickOnTheElementWithCSSSelector($session, $cssSelector)
     {
-        $session = $this->startSession();
         $element = $session->getPage()->find(
             'xpath',
             $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
@@ -110,5 +97,6 @@ class HomeControllerTest extends TestCase
         }
 
         $element->click();
+        return $element;
     }
 }
