@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToe\Game;
+namespace TicTacToe\Domain\Game;
 
 class History
 {

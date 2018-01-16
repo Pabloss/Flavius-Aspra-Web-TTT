@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToe;
+namespace TicTacToe\Domain;
+
+use \TicTacToe\Domain\Game\History;
 
 class Game
 {
@@ -111,7 +113,7 @@ class Game
 
     private $errors;
 
-    public function __construct(\TicTacToe\Game\History $history)
+    public function __construct(History $history)
     {
         $this->board = \array_fill(0, 9, null);
         $this->history = $history;

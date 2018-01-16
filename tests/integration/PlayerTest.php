@@ -4,9 +4,10 @@ declare(strict_types=1);
 namespace TicTacToeTest\integration;
 
 use PHPUnit\Framework\TestCase;
-use TicTacToe\AI\AI;
-use TicTacToe\Game as TicTacToe;
-use TicTacToe\Symbol;
+use \TicTacToe\Domain\AI\AI;
+use \TicTacToe\Domain\Game as TicTacToe;
+use \TicTacToe\Domain\Symbol;
+use \TicTacToe\Domain\Game\History;
 
 class PlayerTest extends TestCase
 {
@@ -18,7 +19,7 @@ class PlayerTest extends TestCase
      */
     public function looping_AI_player_fills_whole_board_in_9_turns()
     {
-        $history = new TicTacToe\History();
+        $history = new History();
         $game = new TicTacToe($history);
         $ai = new AI($game);
         $this->game = $game;

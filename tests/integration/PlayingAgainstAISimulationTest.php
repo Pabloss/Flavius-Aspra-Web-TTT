@@ -4,11 +4,12 @@ declare(strict_types=1);
 namespace TicTacToeTest\integration\business;
 
 use PHPUnit\Framework\TestCase;
-use TicTacToe\AI\AI;
-use TicTacToe\AI\AIPlayer;
-use TicTacToe\Game as TicTacToe;
-use TicTacToe\Player;
-use TicTacToe\Symbol;
+use \TicTacToe\Domain\AI\AI;
+use \TicTacToe\Domain\AI\AIPlayer;
+use \TicTacToe\Domain\Game as TicTacToe;
+use \TicTacToe\Domain\Player;
+use \TicTacToe\Domain\Symbol;
+use \TicTacToe\Domain\Game\History;
 
 class PlayingAgainstAISimulationTest extends TestCase
 {
@@ -20,7 +21,7 @@ class PlayingAgainstAISimulationTest extends TestCase
      */
     public function random_looped_taken_tiles_should_fill_whole_board()
     {
-        $history = new TicTacToe\History();
+        $history = new History();
         $game = new TicTacToe($history);
         $this->game = $game;
         list($playerX, $player0) = $game->players(new Symbol('X'), new Symbol('0'));

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToe\Exception;
+namespace TicTacToe\Domain\Exception;
 
 class NotAllowedSymbolValue extends \Exception
 {

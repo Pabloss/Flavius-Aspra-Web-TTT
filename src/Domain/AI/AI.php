@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToe\AI;
+namespace TicTacToe\Domain\AI;
 
-use TicTacToe\Game as TicTacToe;
-use TicTacToe\Tile;
+use TicTacToe\Domain\Game as TicTacToe;
+use TicTacToe\Domain\Tile;
 
 class AI
 {

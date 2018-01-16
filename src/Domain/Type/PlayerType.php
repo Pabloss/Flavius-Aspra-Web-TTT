@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToe\Type;
+namespace TicTacToe\Domain\Type;
 
-use TicTacToe\Exception\NotAllowedTypeValue;
+use TicTacToe\Domain\Exception\NotAllowedTypeValue;
 
 class PlayerType
 {

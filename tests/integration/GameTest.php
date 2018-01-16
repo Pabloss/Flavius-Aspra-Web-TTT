@@ -4,9 +4,10 @@ declare(strict_types=1);
 namespace TicTacToeTest\integration;
 
 use PHPUnit\Framework\TestCase;
-use TicTacToe\Game as TicTacToe;
-use TicTacToe\Player;
-use TicTacToe\Symbol;
+use \TicTacToe\Domain\Game as TicTacToe;
+use \TicTacToe\Domain\Player;
+use \TicTacToe\Domain\Symbol;
+use \TicTacToe\Domain\Game\History;
 
 class GameTest extends TestCase
 {
@@ -16,7 +17,7 @@ class GameTest extends TestCase
      */
     public function create_players()
     {
-        $history = new TicTacToe\History();
+        $history = new History();
         $game = new TicTacToe($history);
         list($playerX, $player0) = $game->players(new Symbol('X'), new Symbol('0'));
         self::assertInstanceOf(Player::class, $playerX);
@@ -28,7 +29,7 @@ class GameTest extends TestCase
      */
     public function factor_players()
     {
-        $history = new TicTacToe\History();
+        $history = new History();
         $game = new TicTacToe($history);
         list($playerX, $player0) = $game->players(new Symbol('X'), new Symbol('0'));
         self::assertEquals('X', $playerX->symbol()->value());
@@ -40,7 +41,7 @@ class GameTest extends TestCase
      */
     public function duplicate_players_not_allowed()
     {
-        $history = new TicTacToe\History();
+        $history = new History();
         $game = new TicTacToe($history);
         $game->players(new Symbol('X'), new Symbol('X'));
         self::assertEquals(
@@ -54,11 +55,11 @@ class GameTest extends TestCase
      */
     public function players_take_turns()
     {
-        $history = new TicTacToe\History();
+        $history = new History();
         $game = new TicTacToe($history);
         list($playerX, $player0) = $game->players(new Symbol('X'), new Symbol('0'));
-        $playerX->takeTile(new \TicTacToe\Tile(0, 0));
-        $playerX->takeTile(new \TicTacToe\Tile(1, 1));
+        $playerX->takeTile(new \TicTacToe\Domain\Tile(0, 0));
+        $playerX->takeTile(new \TicTacToe\Domain\Tile(1, 1));
         self::assertEquals(
             TicTacToe::DUPLICATED_TURNS_ERROR,
             $game->errors() & TicTacToe::DUPLICATED_TURNS_ERROR
@@ -70,10 +71,10 @@ class GameTest extends TestCase
      */
     public function game_could_not_allow_to_be_started_by_player0()
     {
-        $history = new TicTacToe\History();
+        $history = new History();
         $game = new TicTacToe($history);
         list($playerX, $player0) = $game->players(new Symbol('X'), new Symbol('0'));
-        $player0->takeTile(new \TicTacToe\Tile(0, 0));
+        $player0->takeTile(new \TicTacToe\Domain\Tile(0, 0));
 
         self::assertEquals(
             TicTacToe::GAME_STARTED_BY_PLAYER0_ERROR,

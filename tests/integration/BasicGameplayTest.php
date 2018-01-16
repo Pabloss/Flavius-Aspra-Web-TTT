@@ -4,9 +4,10 @@ declare(strict_types=1);
 namespace TicTacToeTest\integration;
 
 use PHPUnit\Framework\TestCase;
-use TicTacToe\Game as TicTacToe;
-use TicTacToe\Symbol;
-use TicTacToe\Tile;
+use \TicTacToe\Domain\Game as TicTacToe;
+use \TicTacToe\Domain\Symbol;
+use \TicTacToe\Domain\Tile;
+use \TicTacToe\Domain\Game\History;
 
 class BasicGameplayTest extends TestCase
 {
@@ -24,7 +25,7 @@ class BasicGameplayTest extends TestCase
      */
     public function complete_happy_path_gameplay()
     {
-        $history = new TicTacToe\History();
+        $history = new History();
         $game = new TicTacToe($history);
         list($playerX, $player0) = $game->players(new Symbol('X'), new Symbol('0'));
         $playerX->takeTile(new Tile(1, 1));
@@ -41,7 +42,7 @@ class BasicGameplayTest extends TestCase
     public function complete_happy_path_gameplay_other_player_wins()
     {
         // We are swapping players
-        $history = new TicTacToe\History();
+        $history = new History();
         $game = new TicTacToe($history);
         list($playerX, $player0) = $game->players(new Symbol('X'), new Symbol('0'));
         $playerX->takeTile(new Tile(2, 2));
