@@ -1,5 +1,10 @@
 #!/bin/bash
 
+set -x
+set -e
+
+chrome=${LOCAL_CHROME_APPLICATION:=chrome}
+
 php -S 0.0.0.0:8080 -t src/Plugin/UI/Web/public index.php &
-chrome --disable-gpu --headless --remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 &
+${LOCAL_CHROME_APPLICATION} --disable-gpu --headless --remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 &
 echo "\n"
