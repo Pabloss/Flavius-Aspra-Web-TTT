@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace TicTacToeTest\integration\business\acceptance\Controller;
+namespace TicTacToeTest\integration\acceptance\Controller;
 
 use Behat\Mink\Session;
 use DMore\ChromeDriver\ChromeDriver;
@@ -27,7 +27,7 @@ class HomeControllerTest extends TestCase
             null,
             self::WEBSITE_URL
         );
-        $this->container = require dirname(__DIR__, 4) . '/config/container.php';
+        $this->container = require dirname(__DIR__, 3) . '/config/container.php';
         $this->app = $this->container->get(\Zend\Expressive\Application::class);
     }
 
