@@ -1,0 +1,8 @@
+[2018-01-20 17:38:24] expressiveLogger.ERROR: test
+ Context: []
+ Extra: {"file":"/home/pavulon/www/Flavius-Aspra-Web-TTT/vendor/davidburger/expressive-logger/src/Logger.php","line":212,"class":"ExpressiveLogger\\Logger","function":"error","url":"/controller","ip":"127.0.0.1","http_method":"GET","server":"0.0.0.0","referrer":null}
+-----------
+[2018-01-20 17:38:27] expressiveLogger.ERROR: test
+ Context: []
+ Extra: {"file":"/home/pavulon/www/Flavius-Aspra-Web-TTT/vendor/davidburger/expressive-logger/src/Logger.php","line":212,"class":"ExpressiveLogger\\Logger","function":"error","url":"/controller","ip":"127.0.0.1","http_method":"GET","server":"0.0.0.0","referrer":null}
+-----------

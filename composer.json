@@ -36,7 +36,8 @@
         "zendframework/zend-expressive-twigrenderer": "^1.5",
         "zendframework/zend-config": "^3.1",
         "zendframework/zend-stdlib": "^3.1",
-        "zendframework/zend-expressive-zendrouter": "^2.1"
+        "zendframework/zend-expressive-zendrouter": "^2.1",
+        "davidburger/expressive-logger": "^1.9"
     },
     "scripts": {
         "post-install-cmd": [

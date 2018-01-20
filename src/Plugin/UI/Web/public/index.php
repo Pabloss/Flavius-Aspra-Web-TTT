@@ -32,7 +32,8 @@ $container->setFactory('Controller', function ($container) {
         return $controller->indexAction();
     };
 });
-
+$factory = new \ExpressiveLogger\LoggerFactory();
+$logger = $factory($container);
 //$app = AppFactory::create($container);
 $app = $container->get(Application::class);
 $app->get('/', 'HelloWorld');
