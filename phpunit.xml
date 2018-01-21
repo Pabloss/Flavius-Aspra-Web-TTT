@@ -1,5 +1,5 @@
 <phpunit
-        bootstrap="vendor/autoload.php"
+        bootstrap="tests/Bootstrap.php"
         colors="true"
         verbose="true"
 >

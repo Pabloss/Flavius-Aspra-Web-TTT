@@ -38,6 +38,7 @@ class ConfigProvider
                 \Application\Service\PingService::class => \Application\Service\PingService::class,
             ],
             'factories' => [
+                \ExpressiveLogger\Logger::class => \ExpressiveLogger\LoggerFactory::class,
             ],
         ];
     }

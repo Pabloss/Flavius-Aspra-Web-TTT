@@ -17,7 +17,7 @@ $aggregator = new ConfigAggregator([
     new ArrayProvider($cacheConfig),
 
     // Default Application\App module config
-    Application\ConfigProvider::class,
+    \Application\ConfigProvider::class,
 
     // Load application config in a pre-defined order in such a way that local settings
     // overwrite global settings. (Loaded as first to last):

@@ -3,12 +3,13 @@ declare(strict_types=1);
 
 namespace Application\Controller;
 
+use ExpressiveLogger\Logger;
+use ExpressiveLogger\LoggerFacade;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
-use Zend\Mvc\Controller\AbstractController;
-use Zend\Mvc\MvcEvent;
+use Zend\Mvc\Controller\AbstractActionController;
 
-class HomeController extends AbstractController
+class HomeController extends AbstractActionController
 {
     private $renderer;
 
@@ -18,15 +19,16 @@ class HomeController extends AbstractController
     }
 
 
-    public function onDispatch(MvcEvent $e)
-    {
-        // TODO: Implement onDispatch() method.
-    }
-
     public function indexAction(): HtmlResponse
     {
+        LoggerFacade::error('123456 - was put');
         return new HtmlResponse(
             $this->renderer->render('app::index.html.twig')
         );
+    }
+
+    public function testAction(string $message)
+    {
+        LoggerFacade::error($message . ' - was put');
     }
 }

@@ -47,7 +47,7 @@ return [
         'messageFormatter' => \ExpressiveLogger\MessageFormatter\DefaultFormatter::class,
         'registerErrorHandler' => false,
         'ignoredExceptionClasses' => [
-//            \Assert\InvalidArgumentException::class,
+            \Assert\InvalidArgumentException::class,
         ],
         'useIgnoreLogic' => false, //false - all errors will be logged
         'useFacade' => true,
