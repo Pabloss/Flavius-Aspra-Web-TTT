@@ -31,4 +31,10 @@ class HomeController extends AbstractActionController
     {
         LoggerFacade::error($message . ' - was put');
     }
+
+    public function errorAction()
+    {
+        $message = $this->getRequest()->getContent();
+        LoggerFacade::error($message);
+    }
 }

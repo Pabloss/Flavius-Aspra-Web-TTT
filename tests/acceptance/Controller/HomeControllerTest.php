@@ -5,7 +5,9 @@ namespace TicTacToeTest\integration\acceptance\Controller;
 
 use Behat\Mink\Session;
 use DMore\ChromeDriver\ChromeDriver;
+use ExpressiveLogger\Logger;
 use PHPUnit\Framework\TestCase;
+use Zend\ServiceManager\ServiceManager;
 
 class HomeControllerTest extends TestCase
 {
@@ -13,6 +15,7 @@ class HomeControllerTest extends TestCase
     const WEBSITE_URL = 'http://localhost:8080';
     const CHROME_URL = 'http://localhost:9222';
 
+    /** @var ServiceManager $container */
     private $container;
     private $app;
     /**
@@ -55,6 +58,22 @@ class HomeControllerTest extends TestCase
             $this->assertTrue(!empty($element->getHtml()));
         }
     }
+
+    /**
+     * @test
+     */
+    public function errorAction()
+    {
+        $message = "This is a message only to catch by logger";
+        $session = $this->startSession();
+        $session->visit(
+            self::WEBSITE_URL . '/controller/error/' . $message
+        );
+
+        $logContent = \file_get_contents('data/log/error.log');
+        self::assertTrue(\strpos($logContent, $message) > 0);
+    }
+
 
     /**
      * @test

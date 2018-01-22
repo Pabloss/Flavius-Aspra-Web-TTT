@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Application\Factory\HomeControllerFactory;
 use Interop\Http\ServerMiddleware\DelegateInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\JsonResponse;
 use Zend\Diactoros\Response\TextResponse;
 use Zend\Expressive\Application;
@@ -26,9 +27,15 @@ $container->setFactory('Ping', function ($container) {
     };
 });
 $container->setFactory('Controller', function ($container) {
-    return function ($request, DelegateInterface $delegate) use ($container) {
+    return function (ServerRequestInterface $request, DelegateInterface $delegate) use ($container) {
         $controllerFactory = new HomeControllerFactory();
         $controller = $controllerFactory($container, "Controller");
+
+        $uri = $request->getUri();
+        $path = $uri->getPath();
+        if (strpos('error', $path)){
+            return $controller->errorAction();
+        }
         return $controller->indexAction();
     };
 });

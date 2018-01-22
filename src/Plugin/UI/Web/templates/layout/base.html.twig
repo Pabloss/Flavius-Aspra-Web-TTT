@@ -29,7 +29,7 @@
         <script type="text/javascript" src="js/app/app.js"></script>
         <script type="text/javascript" src="js/specs/app-spec.js"></script>
         <script type="text/javascript">
-            var sse = new EventSource('/event_logger.php');
+            var sse = new EventSource('/controller/message');
             sse.addEventListener('event_name',function(e){
                 var data = e.data;
                 console.log(data);
