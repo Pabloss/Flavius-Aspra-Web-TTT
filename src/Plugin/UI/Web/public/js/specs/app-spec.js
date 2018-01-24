@@ -24,12 +24,12 @@ describe('myApp', function () {
             });
         }));
 
-        afterEach(function() {
+        afterEach(function () {
             $httpBackend.verifyNoOutstandingExpectation();
             $httpBackend.verifyNoOutstandingRequest();
         });
 
-        it('should send msg to server', function() {
+        it('should send msg to server', function () {
             /**
              * 1. when you are clicking the same sequence on javascript like in backend
              * 2. you should win

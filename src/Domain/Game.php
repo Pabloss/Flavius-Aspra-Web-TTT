@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace TicTacToe\Domain;
 
-use \TicTacToe\Domain\Game\History;
+use TicTacToe\Domain\Game\History;
 
 class Game
 {

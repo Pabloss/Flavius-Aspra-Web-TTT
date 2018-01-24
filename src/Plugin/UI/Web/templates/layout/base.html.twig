@@ -22,18 +22,18 @@
         <script type="text/javascript" src="https://jasmine.github.io/1.3/lib/jasmine-html.js"></script>
         <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular.js"></script>
         <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular-mocks.js"></script>
-        <link rel="stylesheet" href="https://jasmine.github.io/1.3/lib/jasmine.css" >
-        <link rel="stylesheet" href="css/square-responsive.css" >
+        <link rel="stylesheet" href="https://jasmine.github.io/1.3/lib/jasmine.css">
+        <link rel="stylesheet" href="css/square-responsive.css">
         <script type="text/javascript" src="js/jasmine-runner/runner.js"></script>
 
         <script type="text/javascript" src="js/app/app.js"></script>
         <script type="text/javascript" src="js/specs/app-spec.js"></script>
         <script type="text/javascript">
             var sse = new EventSource('/controller/message');
-            sse.addEventListener('event_name',function(e){
+            sse.addEventListener('browser_error', function (e) {
                 var data = e.data;
                 console.log(data);
-            },false);
+            }, false);
         </script>
         <title>{% block title %}{% endblock %} - My Webpage</title>
     {% endblock %}

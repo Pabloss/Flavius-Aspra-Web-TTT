@@ -8,9 +8,9 @@
         // Returns a promise which is resolved if http calls succeeds,
         // otherwise the promise is rejected
         $scope.takeTile = function (tile) {
-            $http.post('/controller/takeTile' + tile).then(function(response) {
+            $http.post('/controller/takeTile' + tile).then(function (response) {
                 $scope.tile = response;
-            }).catch(function() {
+            }).catch(function () {
                 $scope.status = 'Failed...';
             });
 

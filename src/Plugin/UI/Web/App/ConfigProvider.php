@@ -38,6 +38,7 @@ class ConfigProvider
                 \Application\Service\PingService::class => \Application\Service\PingService::class,
             ],
             'factories' => [
+                \Application\Event\Handler\BrowserErrorEventHandler::class => \Application\Factory\BrowserErrorEventHandlerFactory::class,
                 \ExpressiveLogger\Logger::class => \ExpressiveLogger\LoggerFactory::class,
             ],
         ];
